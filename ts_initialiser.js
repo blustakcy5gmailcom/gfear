@@ -5,6 +5,6 @@
     document.head.appendChild(TypeScriptExec);
 })();
 // function add
-function runTS(code) {
+window.runTS = (code) => {
     return eval(ts.transpile(code));
 }
