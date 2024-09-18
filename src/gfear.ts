@@ -22,4 +22,4 @@ function observeAdd(childClassName: string, func: (className: string, node: Elem
     observer.observe(document.body, { childList: true, subtree: true });
 }
 
-observeAdd(classes.msg, (className: string, node: Element, mutation: MutationRecord) => {const els: HTMLCollection = get(className); if (els.length === 0) {return;}; const mostEl: Element = els[els.length - 1]; if (mostEl.textContent?.toLowerCase().includes("g")) { (mostEl as HTMLElement).style.backgroundColor = "rgb(255, 0, 255)"; window.alert("WARNING: g in presence"); }});
+observeAdd(classes.msg, (className: string, node: Element, mutation: MutationRecord) => {const els: HTMLCollection = get(className); if (els.length === 0) {return;}; const mostEl: Element = els[els.length - 1]; if (mostEl.textContent?.toLowerCase().includes("g")) { (mostEl as HTMLElement).style.backgroundColor = "rgb(255, 255, 0)"; document.title = "The letter G is in presence!" }});
