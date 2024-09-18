@@ -1,4 +1,5 @@
-function alerty(title, txt, btn)
+
+function alerty(titlex, txt, btn)
 {
     if (document.getElementById("xoxoTe")) {console.log("popup already exists"); return;};
     const xo = document.createElement('xoxo');
@@ -108,7 +109,7 @@ function alerty(title, txt, btn)
 
     const title = document.createElement('h2');
     title.className = 'popup-title';
-    title.textContent = title;
+    title.textContent = titlex;
 
     const message = document.createElement('p');
     message.className = 'popup-message';
@@ -176,4 +177,4 @@ waitForTS().then(() => {
               .catch(function (error) {
                   alerty("GFear", `Error loading GFear: ${error}`, "Okay...");
               });
-}
+});
