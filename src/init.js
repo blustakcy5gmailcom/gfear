@@ -172,7 +172,7 @@ await (async function() {
     function waitForTS() {
         return new Promise((resolve) => {
             const checkInterval = setInterval(() => {
-                if (typeof runTS !== 'undefined') {
+                if (typeof window.runTS !== 'undefined') {
                     clearInterval(checkInterval);
                     resolve();
                 }
@@ -183,7 +183,7 @@ await (async function() {
     waitForTS().then(() => {
     axios.get('https://raw.githubusercontent.com/blustakcy5gmailcom/gfear/refs/heads/main/src/gfear.ts')
                 .then(function (response) {
-                    runTS(response.data);
+                    window.runTS(response.data);
                 })
                 .catch(function (error) {
                     alerty("GFear", `Error loading GFear: ${error}`, "Okay...");
